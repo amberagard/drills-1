@@ -7,40 +7,38 @@
         $('#button').click(go);
     }
 
-    var array = $('#input').val().split('-');
-
     function go() {
-        addition();
-        multiply();
+        var array = $('#input').val().split('-');
+        var add = array[0].split('+').filter(isOdd);
+        var multiply = array[1].split('*').filter(isOdd);
+        var sum = getSum(add);
+        var product = getProduct(multiply);
+        $('#sum').append(sum);
+        $('#product').append(product);
     }
 
-    function addition() {
-        var add = array[0].split('+');
+    function isOdd(x) {
+        return x % 2;
+    }
 
-        for(var i = 0; i < array[0]; i++) {
-            add +=i;
+    function getSum(x) {
+        var sumX = 0;
+        for(var i =0; i < x.length; i++) {
+            var a = x[i];
+            sumX += (a * 1);
         }
+
+        return sumX;
     }
 
-    function multiply() {
-        var mult = array[1].split('*');
-
-        for(var i = 0; i < array[1]; i++) {
-            mult *= 1;
+    function getProduct(x) {
+        var productX = 1;
+        for(var i = 0; i < x.length; i++) {
+            var a = x[i];
+            productX *= (a * 1);
         }
+
+        return productX;
     }
-
-    // function go() {
-    //     var array = $('#input').val().split('-');
-    //     var add = array[0].split(', ');
-    //     var multiply = array[1].split(', ');
-    //     // var answers = results(add, multiply);
-    //     var divs = makeDivs(add, multiply, answers);
-    //     $('#box').append(divs);
-    // }
-
-    // function results() {
-    //
-    // }
 
 })();
