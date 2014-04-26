@@ -20,7 +20,7 @@
     }
 
     function getWind(wind) {
-        var w = wind.current_observation.wind_gust_mph;
+        var w = wind.current_observation.wind_gust_kph;
 
         chart.arrows[0].setValue(w);
     }
@@ -50,7 +50,7 @@
                 'innerRadius': '95%',
                 'startValue': 20
             }],
-            'bottomText': '0 mph',
+            'bottomText': '0 km/h',
             'bottomTextYOffset': -20,
             'endValue': 30
         }],

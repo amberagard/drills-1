@@ -23,8 +23,6 @@
         var $div = $('<div>');
         $div.text(conditions.current_observation.temperature_string);
         $('#weather').append($div);
-
-        console.log(conditions);
     }
 
 })();

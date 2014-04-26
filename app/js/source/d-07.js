@@ -10,34 +10,40 @@
     function makeArray() {
         var numbers = $('#input').val();
         var array = numbers.split(', ');
-        var array1 = array[0] * 1;
-        var array2 = array[1] * 1;
 
-        var results = nums(array1, array2).map(divs);
-
-        $('#box').append(results);
+        nums(array);
     }
 
-    function divs(array1) {
-        return $('<div>').append().text(array1);
+    function divs(x) {
+        return '<div>' + x + '</div>';
     }
 
-    function nums(array1, array2) {
-        var num = [];
-        var sort = [];
+    function nums(x) {
 
-        for(var i = array1; i <= array2; i++) {
-            num.push(i);
+        var sort = pair(x).map(divs);
+        $('#box').append(sort);
+    }
+
+    function pair(x) {
+        var pairs = [];
+        var i = 0;
+        while(i < (x.length - 1)) {
+            var a = x.shift() * 1;
+            var b = x.pop() * 1;
+            var c = sum(a, b);
+            pairs.push(c);
         }
 
-        for(var j = 0; num.length !==0; j++) {
-            var a = num.shift();
-            var b = num.length ? num.pop() : 0;
-
-            sort[j] = (a * 1) + (b * 1);
+        if(x.length === 1) {
+            var d = x.shift() * 1;
+            pairs.push(d);
         }
+        //console.log(pairs);
+        return pairs;
+    }
 
-        return sort;
+    function sum(a, b) {
+        return a + b;
     }
 
 })();
