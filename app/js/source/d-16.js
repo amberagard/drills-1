@@ -16,6 +16,7 @@
             $('#sym').text(data.Symbol);
             $('#name').text(data.Name);
             $('#price').text('$' + data.LastPrice).css('background-color', 'red');
+            console.log(data);
         });
 
 

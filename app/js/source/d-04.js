@@ -14,7 +14,6 @@
         var answers = results(bases, exponents);
         var divs = makeDivs(bases, exponents, answers);
         $('#box').append(divs);
-        // Math.pow(base(), exponent());
     }
 
     function results(bases, exponents) {
@@ -38,23 +37,5 @@
 
         return divs;
     }
-
-    // function base() {
-    //     for(var i = 0; i < bases.length; i++) {
-    //         var $div = $('<div>');
-    //         $div.text(bases[i]);
-    //         $div.css('background-color', 'blue');
-    //         $('body').append($div);
-    //     }
-    // }
-    //
-    // function exponent() {
-    //     for(var i = 0; i < exponents; i++) {
-    //         var $div = $('<div>');
-    //         $div.text(exponents[i]);
-    //         $div.css('background-color', 'green');
-    //         $('body').append($div);
-    //     }
-    // }
 
 })();
