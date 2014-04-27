@@ -18,6 +18,7 @@
                 var $td2 = $('<td>').text('$' + data.LastPrice).addClass('prc');
                 $tr.append($td1, $td2);
                 $('#update > tbody').append($tr);
+                console.log(data);
         });
 
     //     setInterval(function() {
@@ -26,11 +27,14 @@
     //
     }
 
-    // function refreshPrice() {
-    //     $('tbody > tr > td.prc').load(function(data) {
-    //         setTimeout(refreshPrice, 1000);
-    //     });
-    // }
+    function refreshPrice() {
+        var prices = $('td.prc');
+        for(var i = 0; i < prices.length; i++) {
+            var symbol = prices.eq(i).siblings('.sym');
+            console.log(symbol.html());
+        }
 
+    }
+    window.refreshPrice = refreshPrice;
 
 })();

@@ -10,18 +10,17 @@
     function getQuote() {
         var symbol = $('#symbol').val().trim().toUpperCase();
         var url = 'http://dev.markitondemand.com/Api/v2/Quote/jsonp?symbol=' + symbol + '&callback=?';
-        // var $div = $('<div>');
 
         $.getJSON(url, function(data) {
-            $('#sym').text(data.Symbol);
-            $('#name').text(data.Name);
-            $('#price').text('$' + data.LastPrice).css('background-color', 'red');
-            console.log(data);
+            var info = $('<div class="quote"></div>');
+            var symbol = $('<div class="sym"></div>').text(data.Symbol);
+            var name = $('<div class="name"></div>').text(data.Name);
+            var price = $('<div class="price"></div>').text('$' + data.LastPrice).css('background-color', 'red');
+
+            $(info).append(symbol, name, price);
+            $('#quote').append(info);
         });
 
-
-        // $div.text(json);
-        // $('#quote').append($div);
     }
 
 })();
