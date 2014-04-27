@@ -16,14 +16,14 @@
         var url = 'http://api.wunderground.com/api/357ca8eec3b7e3da/conditions/q/' + zip + '.json?callback=?';
         $.getJSON(url, function(wind) {
             getWind(wind);
-            console.log(wind);
         });
     }
 
     function getWind(wind) {
-        var w = wind.current_observation.wind_gust_kph;
+        var w = wind.current_observation.wind_gust_mph;
 
         chart.arrows[0].setValue(w);
+        chart.axes[0].setBottomText(w + 'mph');
     }
 
     var chart;
@@ -51,7 +51,7 @@
                 'innerRadius': '95%',
                 'startValue': 20
             }],
-            'bottomText': '0 km/h',
+            'bottomText': '0 mph',
             'bottomTextYOffset': -20,
             'endValue': 30
         }],
