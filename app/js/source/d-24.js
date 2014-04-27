@@ -16,6 +16,7 @@
         var url = 'http://api.wunderground.com/api/357ca8eec3b7e3da/conditions/q/' + zip + '.json?callback=?';
         $.getJSON(url, function(wind) {
             getWind(wind);
+            console.log(wind);
         });
     }
 

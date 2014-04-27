@@ -2,20 +2,19 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    title Drill 25 Weather
-    link(rel='stylesheet', href='./css/d-25.css')
+    title Drill 27 Weather
+    link(rel='stylesheet', href='./css/d-27.css')
   body
     #controls
 
-        h1 Drill 25 3D Money
-        input#symbol(type='text' placeholder='symbol')
-        input#shares(type='text' placeholder='shares')
-        button#add Add
+        h1 Drill 27 Weather Map
+        input#zip(type='text')
+        button#add Add to Map
 
-    #stock
+    #weather
 
     script(src='./js/vendor/jquery-2.1.0.js')
-    script(src='http://www.amcharts.com/lib/3/amcharts.js')
-    script(src='http://www.amcharts.com/lib/3/pie.js')
-    script(src='http://www.amcharts.com/lib/3/themes/patterns.js')
-    script(src='./js/source/d-25.js')
+    script(src='http://www.amcharts.com/lib/3/ammap.js')
+    script(src='http://www.amcharts.com/lib/3/maps/js/worldLow.js')
+    script(src='http://www.amcharts.com/lib/3/themes/none.js')
+    script(src='./js/source/d-27.js')
